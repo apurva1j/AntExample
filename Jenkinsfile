@@ -2,7 +2,7 @@ pipeline {
     agent any 
 	environment
 	{
-	ant_options_theme_private = "C:\Apurva\JenkinsWorkspace\build.xml "
+	ant_options_theme_private = "C:\\Apurva\\JenkinsWorkspace\\build.xml "
 	}
     stages {
         stage('Git Checkout') { 
