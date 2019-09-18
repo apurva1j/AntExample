@@ -16,9 +16,12 @@ pipeline {
             }
         }
 		stage('Build') {
+		Steps
+		{
 		withAnt(installation: 'Ant 1.10.7', jdk: 'jdk-11.0.4') {
 		// some block
 		bat "ant ${ant_options_theme_public} war"
+		}
 }
 		}
 		
