@@ -1,9 +1,13 @@
 pipeline {
     agent any 
+	environment
+	{
+	ant_options_theme_private = "C:\Apurva\JenkinsWorkspace\build.xml "
+	}
     stages {
-        stage('Build') { 
+        stage('Git Checkout') { 
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Pallavikthpl/TestRepos.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/apurva1j/AntExample.git']]])
             }
         }
         stage('Test') { 
@@ -11,6 +15,13 @@ pipeline {
                 bat "echo Test"
             }
         }
+		stage('Build') {
+		withAnt(installation: 'Ant 1.10.7', jdk: 'jdk-11.0.4') {
+		// some block
+		bat "ant ${ant_options_theme_public} war"
+}
+		}
+		
         stage('Deploy') { 
             steps {
                 bat "echo Deploy"
