@@ -16,7 +16,7 @@ pipeline {
             }
         }
 		stage('Build') {
-		Steps
+		steps
 		{
 		withAnt(installation: 'Ant 1.10.7', jdk: 'jdk-11.0.4') {
 		// some block
