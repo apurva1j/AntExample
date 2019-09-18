@@ -20,7 +20,7 @@ pipeline {
 		{
 		withAnt(installation: 'Ant 1.10.7', jdk: 'jdk-11.0.4') {
 		// some block
-		bat "ant ${ant_options_theme_private} war"
+		bat "${ant_options_theme_private}"
 		}
 }
 		}
