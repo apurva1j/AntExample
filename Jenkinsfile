@@ -22,7 +22,7 @@ pipeline {
 		// some block
 		bat "${ant_options_theme_private}"
 		}
-}
+                }
 		}
 		
         stage('Deploy') { 
