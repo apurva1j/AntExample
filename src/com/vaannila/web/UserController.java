@@ -25,8 +25,6 @@ public class UserController extends SimpleFormController {
 		User user = (User) command;
 		userService.add(user);
 		return new ModelAndView("userSuccess","user",user);
-		
-		
 	}
 	
 }
