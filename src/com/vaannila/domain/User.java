@@ -52,6 +52,4 @@ public class User {
 	public void setMailingList(Boolean mailingList) {
 		this.mailingList = mailingList;
 	}
-	
-	
 }
